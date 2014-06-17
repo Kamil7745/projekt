@@ -1,0 +1,94 @@
+#include <iostream>
+#include <conio.h>
+
+using namespace std;
+
+      int main()
+{
+      int nrs=1;        //mowi ¿e petla ma sie powtarzaæ w niesk¹czonoœæ
+while(nrs>0)            //petla while
+{
+ int niez;      //deklaruje i definiuje niez typu int (nie zero w dzieleniu)
+ int nr;                //deklaruje i definiuje nr typu int
+ long double a;         //deklaruje i definiuje a typu long double
+ long double b;         //deklaruje i definiuje b typu long double
+ long double wynik;     //deklaruje i definiuje wynik typu long double
+ start:
+ cout<<"\nPODAJ NUMER \n\nDodawanie - 1 \nOdejmowanie - 2 \nMnorzenie - 3 \nDzielenie - 4 \n5 Konczy Prace\n\n"; //informacje dla u¿ytkownika
+ cin>>nr;               //wpisujesz liczbe nr
+ cout<<"\n";            //przejœcie do nowej lini
+ switch(nr)             //instrukcja switch
+{
+           case 1:       //wybor 1
+                    cout<<"podaj pierwsza liczbe "; //informacja dla uzytkownika
+                    cin>>a;                         //pobranie liczby pierwszej do zmiennej a
+                    cout<<"podaj druga liczbe ";    //informacja dla uzytkownika
+                    cin>>b;                         //pobranie liczby drugiej do zmiennej b
+                    wynik=a+b;                      //operacja dodawania
+                    cout<<"\n";                     //przejscie do nowej linii
+                    cout<<a<<" plus "<<b<<" rowna sie "<<wynik;//wypisanie wynikow operacji
+                    cout<<"\n";     //przejscie do nowej linii
+                    cout<<"kliknij aby kontyunawac\n";  //informacja dla u¿ytkownika
+                    getch();        //czeka az uzytkownik nacisnie dowolny klawisz
+                    break;          //przerwij wykonanie operacji
+           case 2:       //wybor 2
+                    cout<<"podaj pierwsza liczbe "; //pobranie liczby pierwszej do zmiennej a
+                    cin>>a;                         //informacja dla uzytkownika
+                    cout<<"podaj druga liczbe ";    //informacja dla uzytkownika
+                    cin>>b;                         //pobranie liczby drugiej do zmiennej b
+                    wynik=a-b;                      //wykonuje operacja odejmowania
+                    cout<<"\n";                     //przejscie do nowej linii
+                    cout<<a<<" minus "<<b<<" rowna sie "<<wynik;//wypisanie wynikow operacji
+                    cout<<"\n";                     //przejscie do nowej linii
+                    cout<<"kliknij aby kontyunawac\n";//inf dola uzytkownika
+                    getch();                        //czeka az uzytkownik nacisnie dowolny klawisz
+                    break;                          //przerwij wykonanie operacji
+           case 3:        //wybor 3
+                    cout<<"podaj pierwsza liczbe ";
+                    cin>>a;
+                    cout<<"podaj druga liczbe ";
+                    cin>>b;
+                    wynik=a*b;
+                    cout<<"\n";
+                    cout<<a<<" razy "<<b<<" rowna sie "<<wynik;//instrykcje 3
+                    cout<<"\n";
+                    cout<<"kliknij aby kontyunawac\n";
+                    getch();
+                    break;
+           case 4:        //wybor 4
+                    cout<<"podaj pierwsza liczbe ";     //inf dla uzytkownika
+                    cin>>a;                             //pobranie liczby pierwszej do zmiennej a
+                    cout<<"podaj druga liczbe ";        //inf dla uzytkownika
+                    cin>>niez;                          //pobranie liczby drugiej do zmiennej niez
+
+                    //w razie podania przez uzytkownika 0 wykona sie nastepujaca instrukcja
+                    switch(niez)
+                    {
+                    case 0:
+                         cout<<"b³¹d dzielenie przez zero = 0 \n";
+                         cout<<"kliknij aby kontyunawac\n";
+                         getch();
+                         goto start;        //instrukacja bezwarunkowa przejscie do instrukcji start pocz¹tek programu
+
+                    //gdy uzytkownik poda liczbe wieksza od 0 nastepuje wykonanie tej tej czesci programu
+                    default:
+                             wynik=a/niez;
+                    cout<<"\n";
+                    cout<<a<<" podzielone przez "<<niez<<" rowna sie "<<wynik;//instrykcje 4
+                    cout<<"\n";
+                    cout<<"kliknij aby kontyunawac\n";
+                    getch();
+                    goto start;
+                    }
+
+
+           case 5:        //wybor 5
+                goto koniec;//instrykcje ktore koncza program
+           default:       //wybor inny
+                   cout<<"podaj liczbe od 1-5!!!"; //informuje jakie liczby morzna podac
+}
+}
+koniec:
+       cout<<"dowidzenia";  //instrukacja ktora informuje uzytkownika ze zosta³ zakoñczony poprawnie
+return 0;
+}
