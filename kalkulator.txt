@@ -1,5 +1,6 @@
 #include <iostream>
 #include <conio.h>
+#include <math.h>
 
 using namespace std;
 
@@ -13,13 +14,15 @@ while(nrs>0)            //petla while
  long double a;         //deklaruje i definiuje a typu long double
  long double b;         //deklaruje i definiuje b typu long double
  long double wynik;     //deklaruje i definiuje wynik typu long double
+ double pierwiastek;    //deklaruje i definiuje pierwiastek typu long double
  start:
- cout<<"\nPODAJ NUMER \n\nDodawanie - 1 \nOdejmowanie - 2 \nMnorzenie - 3 \nDzielenie - 4 \n5 Konczy Prace\n\n"; //informacje dla u¿ytkownika
+ cout<<"\nPODAJ NUMER \n\nDodawanie - 1 \nOdejmowanie - 2 \nMnorzenie - 3 \nDzielenie - 4 \nPierwiastkowanie - 5\nPotegowanie - 6\n7 Konczy prace programu\n\n"; //informacje dla u¿ytkownika
  cin>>nr;               //wpisujesz liczbe nr
  cout<<"\n";            //przejœcie do nowej lini
  switch(nr)             //instrukcja switch
 {
            case 1:       //wybor 1
+                    cout<<"Wybrano dodawanie: \n";
                     cout<<"podaj pierwsza liczbe "; //informacja dla uzytkownika
                     cin>>a;                         //pobranie liczby pierwszej do zmiennej a
                     cout<<"podaj druga liczbe ";    //informacja dla uzytkownika
@@ -32,6 +35,7 @@ while(nrs>0)            //petla while
                     getch();        //czeka az uzytkownik nacisnie dowolny klawisz
                     break;          //przerwij wykonanie operacji
            case 2:       //wybor 2
+                    cout<<"Wybrano odejmowanie: \n";
                     cout<<"podaj pierwsza liczbe "; //pobranie liczby pierwszej do zmiennej a
                     cin>>a;                         //informacja dla uzytkownika
                     cout<<"podaj druga liczbe ";    //informacja dla uzytkownika
@@ -44,6 +48,7 @@ while(nrs>0)            //petla while
                     getch();                        //czeka az uzytkownik nacisnie dowolny klawisz
                     break;                          //przerwij wykonanie operacji
            case 3:        //wybor 3
+                    cout<<"Wybrano mnozenie: \n";
                     cout<<"podaj pierwsza liczbe ";
                     cin>>a;
                     cout<<"podaj druga liczbe ";
@@ -56,6 +61,7 @@ while(nrs>0)            //petla while
                     getch();
                     break;
            case 4:        //wybor 4
+                    cout<<"Wybrano dzielenie: \n";
                     cout<<"podaj pierwsza liczbe ";     //inf dla uzytkownika
                     cin>>a;                             //pobranie liczby pierwszej do zmiennej a
                     cout<<"podaj druga liczbe ";        //inf dla uzytkownika
@@ -80,12 +86,32 @@ while(nrs>0)            //petla while
                     getch();
                     goto start;
                     }
-
-
-           case 5:        //wybor 5
+            case 5:
+            cout<< "Pierwiastkowanie dowolnego stopnia\n"; //inf dla uzytkownika
+            cout<<"podaj liczbe: ";
+            cin>> a;
+            cout<<"podaj stopien pierwiastka: ";
+            cin>>b;
+            pierwiastek=exp(log(a)/(b));    //Funkcja Exp zwraca wartoœæ sta³ej e (podstawy logarytmu naturalnego) podniesionej do podanej potêgi
+            cout<<"Pierwiastek "<<b<<" stopnia "<<" z "<<a<<" rowna sie "<<pierwiastek;
+            cout<<"\nkliknij aby kontyunawac\n";
+            getch();
+            break;
+            case 6:
+            cout<<"Wybrano potegowanie: \n";
+            cout<<"Podaj liczbe: ";
+            cin>>a;
+            cout<<"Podaj potege: ";
+            cin>>b;
+            wynik=pow(a, b);        //Podnoszenie liczby do dowolnej potêgi. Funkcja ta przyjmuje dwa argumenty i zwraca wynik potêgowania
+            cout<<a<<" do potegi "<<b<<" rowna sie \n"<<wynik;
+            cout<<"\nkliknij aby kontyunawac\n";
+            getch();
+            break;
+           case 7:        //wybor 5
                 goto koniec;//instrykcje ktore koncza program
            default:       //wybor inny
-                   cout<<"podaj liczbe od 1-5!!!"; //informuje jakie liczby morzna podac
+                   cout<<"podaj liczbe od 1-7!!!"; //informuje jakie liczby morzna podac
 }
 }
 koniec:
